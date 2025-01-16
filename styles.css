@@ -4,7 +4,7 @@ body {
     padding: 0;
     background: linear-gradient(135deg, #121212, #1e1e1e);
     color: #ffffff;
-    box-sizing: border-box; /* Ensures padding and borders are accounted for */
+    box-sizing: border-box; /* ensure padding and borders are accounted for */
     overflow-x: hidden;
     scroll-behavior: smooth;
 }
@@ -15,7 +15,7 @@ header {
     left: 0;
     right: 0;
     width: 100%;
-    max-width: 100%; /* Prevent content overflow */
+    max-width: 100%; /* prevent content overflow */
     background: rgba(0, 0, 0, 0.9);
     display: flex;
     justify-content: space-between;
@@ -24,7 +24,7 @@ header {
     z-index: 100;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
     animation: fadeInDown 1s ease-in-out;
-    box-sizing: border-box; /* Ensures padding doesn't affect width */
+    box-sizing: border-box; /* ensure padding doesn't affect width */
 }
 
 header .logo {
@@ -202,15 +202,20 @@ section {
 }
 
 .details .button {
-    display: inline-block;
+    display: inline-block; /* ensures link behaves like a button */
     margin-top: 2rem;
     background: #00d4ff;
     color: #121212;
     padding: 0.8rem 2rem;
     font-size: 1.2rem;
     border-radius: 30px;
-    text-decoration: none;
+    text-decoration: none; /* remove underline */
+    text-align: center;
+    font-weight: 600; /* make text bold */
     transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer; /* cursor changes to a pointer */
+    z-index: 2;
+    position: relative; /* keep positioned correctly */
 }
 
 .details .button:hover {
@@ -374,8 +379,8 @@ footer p {
 
 .gameplay-loop {
     width: 100%;
-    max-width: 400px; /* Reduce the max width to make the video smaller */
+    max-width: 400px;
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-    margin: 0 auto; /* Center the video */
+    margin: 0 auto; /* center video */
 }
