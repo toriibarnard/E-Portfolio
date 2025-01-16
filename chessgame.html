@@ -8,35 +8,60 @@
 </head>
 <body>
     <header>
+        <div class="logo">Torii Barnard</div>
         <nav>
             <a href="index.html">Home</a>
             <a href="quickcash.html">QuickCash</a>
-            <a href="chessgame.html">Chess Game</a>
+            <a href="chessgame.html" class="active">Chess Game</a>
         </nav>
     </header>
 
-    <main>
-        <h1>Chess Game</h1>
-        <p>A Python-based chess game with an interactive interface using Pygame.</p>
+    <main class="project-page">
+        <section class="hero project-hero">
+            <h1>Chess Game</h1>
+            <p>Immerse yourself in a Python-based chess experience with interactive gameplay, developed using Pygame.</p>
+        </section>
 
-        <h2>Project Details</h2>
-        <ul>
-            <li>Language: Python</li>
-            <li>Library: Pygame</li>
-            <li>Features:
-                <ul>
-                    <li>Two-player gameplay</li>
-                    <li>Legal move validation</li>
-                    <li>Currently Developing AI Opponent</li>
-                </ul>
-            </li>
-        </ul>
+        <section class="details" data-aos="fade-up">
+            <h2>Project Details</h2>
+            <ul>
+                <li><strong>Language:</strong> Python</li>
+                <li><strong>Library:</strong> Pygame</li>
+                <li><strong>Features:</strong>
+                    <ul>
+                        <li>Two-player gameplay</li>
+                        <li>Legal move validation</li>
+                        <li>Currently Developing AI Opponent</li>
+                    </ul>
+                </li>
+            </ul>
+            <a href="https://github.com/toriibarnard/Chess-Game" target="_blank" class="button">View Source Code on GitHub</a>
+        </section>
 
-        <a href="https://github.com/your-username/Chess-Game" target="_blank">View Source Code on GitHub</a>
+        <section class="gameplay-video">
+            <h2>A Short Gameplay Preview</h2>
+            <video autoplay loop muted playsinline class="gameplay-loop">
+                <source src="assets/videos/chess-demo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+        <section class="download-section">
+            <h2>Try It Yourself</h2>
+            <p>Download the game folder and run it on your system.</p>
+            <a href="https://drive.google.com/uc?export=download&id=1evCGFwi2AMf8lCeBmaUXT4eQeZRvNkHp" class="button" download>Download Chess Game</a>
+        </section>
     </main>
 
     <footer>
         <p>&copy; 2025 Torii Barnard. All Rights Reserved.</p>
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-in-out',
+        });
+    </script>
 </body>
 </html>

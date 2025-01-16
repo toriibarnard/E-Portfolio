@@ -283,3 +283,15 @@ footer p {
         text-shadow: 0 0 16px #0077b5, 0 0 32px #0077b5;
     }
 }
+
+.gameplay-video {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.gameplay-loop {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
