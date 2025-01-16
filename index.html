@@ -3,45 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Portfolio</title>
+    <title>Minimalistic Portfolio</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="logo">MyPortfolio</div>
+    <header class="fade-in">
+        <div class="logo">Torii Barnard</div>
         <nav>
-            <a href="#about">About Me</a>
+            <a href="#about">About</a>
             <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
 
     <div class="hero">
-        <h1>Hi, I'm Torii Barnard</h1>
-        <p>A passionate developer crafting modern web experiences.</p>
-        <a href="#projects">View My Work</a>
+        <h1 data-aos="fade-up">Hi, I'm Torii</h1>
+        <p data-aos="fade-up">Creating digital experiences that are impactful, modern, and functional.</p>
+        <a href="#projects" class="button" data-aos="fade-up">Explore My Work</a>
     </div>
 
     <section id="about">
         <h2 data-aos="fade-up">About Me</h2>
-        <p data-aos="fade-up">I'm a computer science student with a passion for building beautiful and functional websites. With a strong foundation in coding and design, I love solving problems and bringing ideas to life.</p>
+        <p data-aos="fade-up">Hi, I’m Torii Barnard, a forward-thinking developer with a knack for transforming complex ideas into elegant, functional digital experiences. With a background in Computer Science from Dalhousie University, I’ve tackled diverse projects, embracing every challenge as an opportunity to innovate and grow.</p>
     </section>
 
     <section id="projects">
         <h2 data-aos="fade-up">My Projects</h2>
         <div class="projects">
-            <div class="project">
+            <div class="project" data-aos="zoom-in">
                 <h3>QuickCash - Job Posting App</h3>
-                <p>An Android app for job postings, built in Java with Firebase integration.</p>
-                <a href="quickcash.html" target="_self">View Project</a>
+                <p>An Android app connecting job seekers and employers seamlessly.</p>
+                <a href="quickcash.html" class="button" target="_self">View Details</a>
             </div>
-            <div class="project">
+            <div class="project" data-aos="zoom-in">
                 <h3>Chess Game</h3>
                 <p>A Python-based chess game with an interactive interface using Pygame.</p>
-                <a href="chessgame.html" target="_self">View Project</a>
+                <a href="chessgame.html" class="button" target="_self">View Details</a>
+            </div>
+            <div class="project" data-aos="zoom-in">
+                <h3>Portfolio Website</h3>
+                <p>A modern and minimalistic portfolio showcasing my journey in tech.</p>
+                <a href="https://github.com/toriibarnard/E-Portfolio" class="button" target="_blank">View on GitHub</a>
             </div>
         </div>
     </section>
@@ -49,11 +54,11 @@
     <section id="contact">
         <h2 data-aos="fade-up">Connect with Me</h2>
         <div class="social-links" data-aos="fade-up">
-            <a href="https://www.linkedin.com/in/torii-barnard" target="_blank">
-                <i class="fab fa-linkedin" style="font-size: 2rem; color: #0077b5; margin-right: 1rem;"></i>
+            <a href="https://www.linkedin.com/in/your-profile" target="_blank" class="icon">
+                <i class="fab fa-linkedin"></i>
             </a>
-            <a href="https://github.com/toriibarnard" target="_blank">
-                <i class="fab fa-github" style="font-size: 2rem; color: #333; margin-left: 1rem;"></i>
+            <a href="https://github.com/your-username" target="_blank" class="icon">
+                <i class="fab fa-github"></i>
             </a>
         </div>
     </section>
@@ -64,7 +69,10 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
-        AOS.init();
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-in-out',
+        });
     </script>
 </body>
 </html>
