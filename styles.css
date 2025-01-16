@@ -4,6 +4,7 @@ body {
     padding: 0;
     background: linear-gradient(135deg, #121212, #1e1e1e);
     color: #ffffff;
+    box-sizing: border-box; /* Ensures padding and borders are accounted for */
     overflow-x: hidden;
     scroll-behavior: smooth;
 }
@@ -11,15 +12,19 @@ body {
 header {
     position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     width: 100%;
+    max-width: 100%; /* Prevent content overflow */
     background: rgba(0, 0, 0, 0.9);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 3rem;
+    padding: 1rem 2rem;
     z-index: 100;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
     animation: fadeInDown 1s ease-in-out;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
 }
 
 header .logo {
@@ -32,7 +37,8 @@ header .logo {
 
 header nav {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 header nav a {
@@ -43,12 +49,20 @@ header nav a {
     padding: 0.5rem 1rem;
     border-radius: 5px;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    white-space: nowrap;
 }
 
 header nav a:hover {
     background-color: #00d4ff;
     color: #121212;
     transform: scale(1.1);
+}
+
+header nav {
+    max-width: 100%;
+    overflow: hidden;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 }
 
 .hero {
