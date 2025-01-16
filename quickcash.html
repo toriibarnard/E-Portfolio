@@ -8,42 +8,66 @@
 </head>
 <body>
     <header>
+        <div class="logo">Torii Barnard</div>
         <nav>
             <a href="index.html">Home</a>
-            <a href="quickcash.html">QuickCash</a>
+            <a href="quickcash.html" class="active">QuickCash</a>
             <a href="chessgame.html">Chess Game</a>
         </nav>
     </header>
 
-    <main>
-        <h1>QuickCash - Job Posting App</h1>
-        <p>An Android app for job postings, built in Java with Firebase integration.</p>
+    <main class="project-page">
+        <section class="hero project-hero">
+            <h1>QuickCash</h1>
+            <p>A cutting-edge Android app for job postings, built in Java with Firebase integration.</p>
+        </section>
 
-        <h2>Video Demo</h2>
-        <!-- <video controls width="640">
-            <source src="assets/videos/quickcash.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video> -->
+        <section class="details" data-aos="fade-up">
+            <h2>Project Details</h2>
+            <ul>
+                <li><strong>Platform:</strong> Android</li>
+                <li><strong>Language:</strong> Java</li>
+                <li><strong>Database:</strong> Firebase</li>
+                <li><strong>Technologies:</strong>
+                    <ul>
+                        <li>Push Notifications</li>
+                        <li>Google Maps Integration</li>
+                        <li>PayPal Payment Gateway</li>
+                        <li>Firebase Authentication and Database</li>
+                    </ul>
+                </li>
+                <li><strong>Features:</strong>
+                    <ul>
+                        <li>Create job posts</li>
+                        <li>Apply for jobs</li>
+                        <li>User authentication</li>
+                        <li>Location-based job suggestions</li>
+                        <li>Secure payments using PayPal</li>
+                    </ul>
+                </li>
+            </ul>
+            <a href="https://github.com/your-username/QuickCash" target="_blank" class="button">View Source Code on GitHub</a>
+        </section>
 
-        <h2>Project Details</h2>
-        <ul>
-            <li>Platform: Android</li>
-            <li>Language: Java</li>
-            <li>Database: Firebase</li>
-            <li>Features:
-                <ul>
-                    <li>Create job posts</li>
-                    <li>Apply for jobs</li>
-                    <li>User authentication</li>
-                </ul>
-            </li>
-        </ul>
-
-        <a href="https://github.com/your-username/QuickCash" target="_blank">View Source Code on GitHub</a>
+        <section class="video-demo" data-aos="fade-up">
+            <h2>Video Demo</h2>
+            <iframe width="800" height="450" src="https://www.youtube.com/embed/6KThKUqbzhc" 
+                title="QuickCash Demo Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </section>
     </main>
 
     <footer>
         <p>&copy; 2025 Torii Barnard. All Rights Reserved.</p>
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-in-out',
+        });
+    </script>
 </body>
 </html>
