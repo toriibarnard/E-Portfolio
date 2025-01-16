@@ -14,7 +14,9 @@
         <div class="logo">Torii Barnard</div>
         <nav>
             <a href="#about">About</a>
+            <a href="#work-experience">Work Experience</a>
             <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
             <a href="#contact">Connect</a>
         </nav>
     </header>
@@ -22,12 +24,40 @@
     <div class="hero">
         <h1 data-aos="fade-up">Hi, I'm Torii</h1>
         <p data-aos="fade-up">Creating digital experiences that are impactful, modern, and functional.</p>
-        <a href="#projects" class="button" data-aos="fade-up">Explore My Work</a>
+        <a href="#work-experience" class= button data-aos="fade-up">Explore My Work</a>
+        <div class="dynamic-particles">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </div>
 
     <section id="about">
         <h2 data-aos="fade-up">About Me</h2>
-        <p data-aos="fade-up">Hi, I’m Torii Barnard, a forward-thinking developer with a knack for transforming complex ideas into elegant, functional digital experiences. With a background in Computer Science from Dalhousie University, I’ve tackled diverse projects, embracing every challenge as an opportunity to innovate and grow. When not writing lines of code, I enjoy going to the gym, playing soccer and practicing electric guitar.</p>
+        <p data-aos="fade-up">Hi, I’m Torii Barnard, a forward-thinking developer with a knack for transforming complex ideas into elegant, 
+            functional digital experiences. With a background in Computer Science from Dalhousie University, I’ve tackled diverse projects, 
+            embracing every challenge as an opportunity to innovate and grow. When not writing lines of code, I enjoy going to the gym, 
+            playing soccer and practicing electric guitar.
+        </p>
+    </section>
+
+    <section id="work-experience">
+        <h2>Work Experience</h2>
+        <div class="experience">
+            <div class="job" data-aos="fade-up">
+                <h3>Web Development Intern</h3>
+                <p class="job-duration">November 2024 - Present</p>
+                <p class="company">TecBox International LTD, Rhodes Corner, NS</p>
+                <ul>
+                    <li>Designed and developed a website for a small business.</li>
+                    <li>Integrated content to streamline property updates and improve user experience.</li>
+                    <li>Collaborated with clients to gather requirements, implement feedback, and deliver functional solutions.</li>
+                    <li>Balanced technical tasks with client needs to deliver high-quality results.</li>
+                </ul>
+            </div>
+        </div>
     </section>
 
     <section id="projects">
@@ -47,6 +77,82 @@
                 <h3>Portfolio Website</h3>
                 <p>A modern and minimalistic portfolio showcasing my journey in tech.</p>
                 <a href="https://github.com/toriibarnard/E-Portfolio" class="button" target="_blank">View on GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2 data-aos="fade-up">My Skills</h2>
+        <div class="skills-toggle" data-aos="fade-up">
+            <button class="toggle-button" data-category="programming">Programming Languages</button>
+            <button class="toggle-button" data-category="web">Web Development</button>
+            <button class="toggle-button" data-category="management">Project Management</button>
+        </div>
+        <div class="skills-container">
+            <div class="skill-category programming" data-aos="fade-in">
+                <h3>Programming Languages</h3>
+                <ul>
+                    <li>
+                        <span class="skill-name">Python</span>
+                        <div class="progress-bar"><span style="width: 90%;"></span></div>
+                    </li>
+                    <li>
+                        <span class="skill-name">Java</span>
+                        <div class="progress-bar"><span style="width: 85%;"></span></div>
+                    </li>
+                    <li>
+                        <span class="skill-name">JavaScript</span>
+                        <div class="progress-bar"><span style="width: 80%;"></span></div>
+                    </li>
+                    <li>
+                        <span class="skill-name">SQL</span>
+                        <div class="progress-bar"><span style="width: 75%;"></span></div>
+                    </li>
+                    <li>
+                        <span class="skill-name">C, C++</span>
+                        <div class="progress-bar"><span style="width: 85%;"></span></div>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="skill-category web" data-aos="fade-in">
+                <h3>Web Development</h3>
+                <ul>
+                    <li>
+                        <span class="skill-name">HTML & CSS</span>
+                        <div class="progress-bar"><span style="width: 95%;"></span></div>
+                    </li>
+                    <li>
+                        <span class="skill-name">PHP</span>
+                        <div class="progress-bar"><span style="width: 70%;"></span></div>
+                    </li>
+                    <li>
+                        <span class="skill-name">Full-stack Development</span>
+                        <div class="progress-bar"><span style="width: 80%;"></span></div>
+                    </li>
+                    <li>
+                        <span class="skill-name">UI/UX Design</span>
+                        <div class="progress-bar"><span style="width: 75%;"></span></div>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="skill-category management" data-aos="fade-in">
+                <h3>Project Management</h3>
+                <ul>
+                    <li>
+                        <span class="skill-name">Agile Methodologies</span>
+                        <div class="progress-bar"><span style="width: 85%;"></span></div>
+                    </li>
+                    <li>
+                        <span class="skill-name">Team Collaboration</span>
+                        <div class="progress-bar"><span style="width: 90%;"></span></div>
+                    </li>
+                    <li>
+                        <span class="skill-name">Pair Programming</span>
+                        <div class="progress-bar"><span style="width: 80%;"></span></div>
+                    </li>
+                </ul>
             </div>
         </div>
     </section>
@@ -74,5 +180,6 @@
             easing: 'ease-in-out',
         });
     </script>
+    <script src="script.js" defer></script>
 </body>
 </html>
