@@ -54,3 +54,28 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         requestAnimationFrame(animation);
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Create Back to Top button
+    const backToTopButton = document.createElement("button");
+    backToTopButton.classList.add("back-to-top");
+    backToTopButton.innerHTML = "↑";
+    document.body.appendChild(backToTopButton);
+
+    // Show or hide the button based on scroll position
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+            backToTopButton.style.display = "block";
+        } else {
+            backToTopButton.style.display = "none";
+        }
+    });
+
+    // Smooth scroll to top on click
+    backToTopButton.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+});
