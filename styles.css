@@ -471,19 +471,28 @@ footer p {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .skill-category li {
-    margin-bottom: 1rem;
+    margin: 0.5rem 1rem;
+    padding: 1rem 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+    font-size: 1.2rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    color: #ffffff;
+    gap: 0.5rem;
+    transition: transform 0.3s ease, background 0.3s ease;
 }
 
-.skill-name {
-    font-size: 1.2rem;
-    flex: 1;
+.skill-category li:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .skills-toggle {
@@ -499,8 +508,8 @@ footer p {
     text-decoration: none;
     font-size: 1rem;
     transition: background 0.3s ease, transform 0.2s ease;
-    outline: none; /* removes the focus outline */
-    border: none;  /* ensures no border is applied */
+    outline: none;
+    border: none;
 }
 
 .toggle-button:hover {
@@ -509,31 +518,15 @@ footer p {
 }
 
 .toggle-button:focus {
-    outline: none; /* ensures no outline appears on focus */
-    border: none;  /* removes border in case focus adds it */
+    outline: none;
 }
 
 .skill-category {
-    display: none; /* hide all categories by default */
+    display: none; /* Hide all categories by default */
 }
 
 .skill-category.active {
-    display: block; /* show only the active category */
-}
-
-.progress-bar {
-    flex: 2;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    overflow: hidden;
-    height: 10px;
-    margin-left: 1rem;
-}
-
-.progress-bar span {
-    display: block;
-    height: 100%;
-    background: linear-gradient(90deg, #00d4ff, #0077b5);
+    display: block; /* Show only the active category */
 }
 
 /* Animations */
