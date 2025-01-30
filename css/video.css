@@ -1,0 +1,50 @@
+/* video.css */
+
+.gameplay-video h2 {
+    font-size: 2.5rem;
+    color: #00d4ff;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.gameplay-video .button {
+    display: inline-block; /* ensures link behaves like a button */
+    margin-top: 2rem;
+    background: #00d4ff;
+    color: #ffffff;
+    padding: 0.8rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    text-decoration: none; /* remove underline */
+    text-align: center;
+    font-weight: 600; /* make text bold */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer; /* cursor changes to a pointer */
+    z-index: 2;
+    position: relative; /* keep positioned correctly */
+}
+.gameplay-video .button:hover {
+    background: #0077b5;
+    transform: scale(1.1);
+    color: #ffffff;
+}
+
+.gameplay-video {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.gameplay-loop {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    margin: 0 auto; /* Center video */
+}
+
+@media (max-width: 768px) {
+    .gameplay-loop {
+        max-width: 100%; /* Ensure video is responsive on smaller screens */
+    }
+}

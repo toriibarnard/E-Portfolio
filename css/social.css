@@ -1,0 +1,46 @@
+/* social.css */
+
+/* Social Links */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+#contact h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(90deg, #00d4ff, #0077b5);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: textGlowPulse 2s infinite ease-in-out;
+}
+
+.icon {
+    font-size: 2rem;
+    color: #ffffff;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.icon:hover {
+    color: #00d4ff;
+    transform: scale(1.2);
+}
+
+/* Contact Section */
+#contact {
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #1e1e1e, #2a2a2a);
+    color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    text-align: center;
+}
+
+#contact p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.85);
+    margin-top: 1rem;
+}

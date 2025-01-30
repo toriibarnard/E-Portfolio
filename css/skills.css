@@ -1,0 +1,93 @@
+/* skills.css */
+
+#skills {
+    padding: 4rem 2rem;
+    text-align: center;
+    background: linear-gradient(135deg, #121212, #1e1e1e);
+    color: rgba(255, 255, 255, 0.85);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    margin-top: 3rem;
+}
+
+#skills h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(90deg, #00d4ff, #0077b5);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: textGlowPulse 2s infinite ease-in-out;
+}
+
+.skill-category {
+    margin-bottom: 3rem;
+}
+
+.skill-category h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #00d4ff;
+    text-transform: uppercase;
+}
+
+.skill-category ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.skill-category li {
+    margin: 0.5rem 1rem;
+    padding: 1rem 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.skill-category li:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.skills-toggle {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.toggle-button {
+    background: linear-gradient(90deg, #00d4ff, #0077b5);
+    color: #ffffff;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background 0.3s ease, transform 0.2s ease;
+    outline: none;
+    border: none;
+}
+
+.toggle-button:hover {
+    background: #00d4ff;
+    transform: scale(1.1);
+}
+
+.toggle-button:focus {
+    outline: none;
+}
+
+.skill-category {
+    display: none; /* Hide all categories by default */
+}
+
+.skill-category.active {
+    display: block; /* Show only the active category */
+}

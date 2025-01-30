@@ -1,0 +1,70 @@
+/* projects.css */
+
+/* projects.css */
+
+#projects .projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, #1e1e1e, #2a2a2a);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+#projects .project {
+    background: #121212;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    position: relative; /* Set relative positioning for absolute child (button) */
+    overflow: hidden; /* Ensure no content overflows */
+    height: 180px; /* Set a fixed height for each card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+#projects h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(90deg, #00d4ff, #0077b5);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: textGlowPulse 2s infinite ease-in-out;
+}
+
+#projects .project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 212, 255, 0.5);
+}
+
+#projects .project h3 {
+    color: #00d4ff;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+#projects .project p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1rem;
+}
+
+#projects .project .button {
+    background: linear-gradient(90deg, #00d4ff, #0077b5);
+    color: #ffffff;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background 0.3s ease, transform 0.2s ease;
+    position: absolute; /* Use absolute positioning to fix the button's position */
+    bottom: 1rem; /* Align the button at the bottom with some margin */
+    left: 50%; /* Center the button horizontally */
+    transform: translateX(-50%); /* Center the button exactly */
+}
+
+#projects .project .button:hover {
+    background: #00d4ff;
+    transform: scale(1.1) translateX(-50%);
+}

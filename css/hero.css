@@ -1,0 +1,81 @@
+/* hero.css */
+
+/* hero.css */
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh !important; /* Ensures it takes the full viewport height */
+    text-align: center;
+    background: linear-gradient(135deg, #1e1e1e, #2a2a2a);
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 2;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #00d4ff, #0077b5);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: textGlow 3s infinite;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 2;
+    color: #bbbbbb;
+}
+
+.hero .button {
+    background: linear-gradient(90deg, #00d4ff, #0077b5);
+    color: #121212;
+    padding: 0.8rem 2.5rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease, background 0.5s ease;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.8), 0 0 30px rgba(0, 100, 255, 0.8);
+    animation: buttonPulse 2s infinite alternate ease-in-out;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 212, 255, 0.2), transparent);
+    z-index: 1;
+    animation: pulse 3s infinite;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 120%;
+    height: 120%;
+    background: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) 10px, rgba(255, 255, 255, 0.05) 10px, rgba(255, 255, 255, 0.05) 20px);
+    z-index: 0;
+    transform: rotate(0deg);
+    animation: rotateBg 10s linear infinite;
+}
+
+
+.hero .button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(0, 212, 255, 0.9), 0 0 50px rgba(0, 100, 255, 0.9);
+}
