@@ -91,56 +91,12 @@
 /* Individual Shooting Star */
 .shooting-star {
     position: absolute;
-    top: 0;
-    left: 0;
     width: 2px;
     height: 2px;
     background: white;
     border-radius: 50%;
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
     opacity: 0;
-    animation: shootStar 5s infinite ease-in;
+    animation: shootStar linear infinite;
 }
 
-/* Randomize Shooting Star Positions and Delays */
-.shooting-star:nth-child(1) {
-    top: 10%;
-    left: 20%;
-    animation-delay: 0s;
-    animation-duration: 3s;
-}
-
-.shooting-star:nth-child(2) {
-    top: 30%;
-    left: 50%;
-    animation-delay: 2s;
-    animation-duration: 4s;
-}
-
-.shooting-star:nth-child(3) {
-    top: 50%;
-    left: 80%;
-    animation-delay: 1s;
-    animation-duration: 5s;
-}
-
-.shooting-star:nth-child(4) {
-    top: 50%;
-    left: 100%;
-    animation-delay: 0s;
-    animation-duration: 7s;
-}
-
-.shooting-star:nth-child(5) {
-    top: 80%;
-    left: 50%;
-    animation-delay: 2s;
-    animation-duration: 3s;
-}
-
-.shooting-star:nth-child(6) {
-    top: 200%;
-    left: 80%;
-    animation-delay: 1s;
-    animation-duration: 6s;
-}
