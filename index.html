@@ -3,176 +3,1396 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Torii Barnard</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-
-    <link href="css/main.css" rel="stylesheet">
-    <link href="css/header.css" rel="stylesheet">
-    <link href="css/hero.css" rel="stylesheet">
-    <link href="css/section.css" rel="stylesheet">
-    <link href="css/projects.css" rel="stylesheet">
-    <link href="css/about.css" rel="stylesheet">
-    <link href="css/skills.css" rel="stylesheet">
-    <link href="css/social.css" rel="stylesheet">
-    <link href="css/back-to-top.css" rel="stylesheet">
-    <link href="css/work.css" rel="stylesheet">
+    <title>Site Under Maintenance</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-dark: #0a0a0a;
+            --secondary-dark: #1a1a1a;
+            --tertiary-dark: #2a2a2a;
+            --accent-gray: #404040;
+            --light-gray: #6c757d;
+            --medium-gray: #495057;
+            --dark-gray: #343a40;
+            --almost-black: #212529;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            height: 100vh;
+            overflow: hidden;
+            background: var(--primary-dark);
+            position: relative;
+            cursor: none;
+        }
+        
+        /* LAYER 1: Base animated gradient background */
+        .bg-layer-1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, 
+                var(--primary-dark) 0%, 
+                var(--secondary-dark) 25%, 
+                var(--tertiary-dark) 50%, 
+                var(--secondary-dark) 75%, 
+                var(--primary-dark) 100%);
+            background-size: 400% 400%;
+            animation: backgroundShift 20s ease infinite;
+            z-index: 1;
+        }
+        
+        @keyframes backgroundShift {
+            0% { background-position: 0% 50%; }
+            25% { background-position: 100% 0%; }
+            50% { background-position: 100% 100%; }
+            75% { background-position: 0% 100%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* LAYER 2: Geometric pattern overlay */
+        .bg-layer-2 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 25% 25%, var(--accent-gray) 1px, transparent 1px),
+                radial-gradient(circle at 75% 75%, var(--medium-gray) 1px, transparent 1px),
+                radial-gradient(circle at 50% 50%, var(--dark-gray) 0.5px, transparent 0.5px),
+                linear-gradient(45deg, transparent 49%, rgba(64, 64, 64, 0.05) 50%, transparent 51%),
+                linear-gradient(-45deg, transparent 49%, rgba(128, 128, 128, 0.03) 50%, transparent 51%),
+                linear-gradient(90deg, transparent 49%, rgba(96, 96, 96, 0.02) 50%, transparent 51%);
+            background-size: 100px 100px, 150px 150px, 75px 75px, 30px 30px, 30px 30px, 60px 60px;
+            opacity: 0.3;
+            animation: patternDrift 25s linear infinite, patternPulse 8s ease-in-out infinite alternate;
+            z-index: 2;
+        }
+        
+        @keyframes patternDrift {
+            0% { transform: translateX(0) translateY(0); }
+            100% { transform: translateX(-100px) translateY(-100px); }
+        }
+        
+        @keyframes patternPulse {
+            0% { opacity: 0.2; }
+            100% { opacity: 0.4; }
+        }
+        
+        /* LAYER 3: Animated nebula clouds */
+        .bg-layer-3 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(ellipse at 20% 30%, rgba(80, 80, 80, 0.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 70%, rgba(64, 64, 64, 0.12) 0%, transparent 50%),
+                radial-gradient(ellipse at 60% 10%, rgba(96, 96, 96, 0.1) 0%, transparent 70%),
+                radial-gradient(ellipse at 10% 80%, rgba(72, 72, 72, 0.08) 0%, transparent 55%),
+                radial-gradient(ellipse at 90% 20%, rgba(88, 88, 88, 0.06) 0%, transparent 45%);
+            animation: nebulaDrift 30s ease-in-out infinite alternate, nebulaRotate 45s linear infinite;
+            z-index: 3;
+        }
+        
+        @keyframes nebulaDrift {
+            0% { transform: translateX(-20px) translateY(-10px) scale(1); }
+            100% { transform: translateX(20px) translateY(10px) scale(1.1); }
+        }
+        
+        @keyframes nebulaRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* LAYER 4: Moving particles system */
+        .particle-system {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 4;
+            pointer-events: none;
+        }
+        
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        
+        .particle-small {
+            width: 2px;
+            height: 2px;
+            background: linear-gradient(45deg, rgba(128, 128, 128, 0.8), rgba(96, 96, 96, 0.6));
+            animation: floatUp 8s linear infinite;
+            box-shadow: 0 0 10px rgba(128, 128, 128, 0.4);
+        }
+        
+        .particle-medium {
+            width: 4px;
+            height: 4px;
+            background: linear-gradient(45deg, rgba(112, 112, 112, 0.7), rgba(80, 80, 80, 0.5));
+            animation: floatUpSlow 12s linear infinite;
+            box-shadow: 0 0 15px rgba(112, 112, 112, 0.3);
+        }
+        
+        .particle-large {
+            width: 6px;
+            height: 6px;
+            background: linear-gradient(45deg, rgba(144, 144, 144, 0.6), rgba(64, 64, 64, 0.4));
+            animation: floatUpFast 6s linear infinite;
+            box-shadow: 0 0 20px rgba(144, 144, 144, 0.2);
+        }
+        
+        @keyframes floatUp {
+            0% { 
+                transform: translateY(100vh) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { 
+                transform: translateY(-100px) translateX(50px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes floatUpSlow {
+            0% { 
+                transform: translateY(100vh) translateX(0) rotate(0deg) scale(0);
+                opacity: 0;
+            }
+            15% { opacity: 1; transform: scale(1); }
+            85% { opacity: 1; }
+            100% { 
+                transform: translateY(-100px) translateX(-30px) rotate(-180deg) scale(0);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes floatUpFast {
+            0% { 
+                transform: translateY(100vh) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            5% { opacity: 1; }
+            95% { opacity: 1; }
+            100% { 
+                transform: translateY(-100px) translateX(80px) rotate(720deg);
+                opacity: 0;
+            }
+        }
+        
+        /* LAYER 5: Geometric shapes floating */
+        .geometric-system {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 5;
+            pointer-events: none;
+        }
+        
+        .geometric-shape {
+            position: absolute;
+            border: 1px solid rgba(128, 128, 128, 0.3);
+            animation: geometricFloat 15s ease-in-out infinite;
+        }
+        
+        .shape-triangle {
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 20px solid rgba(96, 96, 96, 0.2);
+            animation: triangleRotate 20s linear infinite;
+        }
+        
+        .shape-square {
+            width: 15px;
+            height: 15px;
+            background: rgba(112, 112, 112, 0.15);
+            animation: squarePulse 10s ease-in-out infinite;
+        }
+        
+        .shape-diamond {
+            width: 12px;
+            height: 12px;
+            background: rgba(80, 80, 80, 0.2);
+            transform: rotate(45deg);
+            animation: diamondSpin 8s linear infinite;
+        }
+        
+        @keyframes geometricFloat {
+            0%, 100% { transform: translateY(0px) translateX(0px); }
+            25% { transform: translateY(-30px) translateX(20px); }
+            50% { transform: translateY(-15px) translateX(-10px); }
+            75% { transform: translateY(-40px) translateX(15px); }
+        }
+        
+        @keyframes triangleRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes squarePulse {
+            0%, 100% { transform: scale(1); opacity: 0.15; }
+            50% { transform: scale(1.5); opacity: 0.3; }
+        }
+        
+        @keyframes diamondSpin {
+            0% { transform: rotate(45deg); }
+            100% { transform: rotate(405deg); }
+        }
+        
+        /* LAYER 6: Matrix-style rain effect */
+        .matrix-rain {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 6;
+            pointer-events: none;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: rgba(128, 128, 128, 0.3);
+        }
+        
+        .matrix-column {
+            position: absolute;
+            animation: matrixFall 8s linear infinite;
+            white-space: pre;
+        }
+        
+        @keyframes matrixFall {
+            0% { top: -100%; opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+        
+        /* LAYER 7: Scanning lines effect */
+        .scan-lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 7;
+            pointer-events: none;
+        }
+        
+        .scan-line {
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(128, 128, 128, 0.1) 25%, 
+                rgba(160, 160, 160, 0.2) 50%, 
+                rgba(128, 128, 128, 0.1) 75%, 
+                transparent 100%);
+            animation: scanMove 6s linear infinite;
+        }
+        
+        @keyframes scanMove {
+            0% { top: -10px; opacity: 0; }
+            5% { opacity: 1; }
+            95% { opacity: 1; }
+            100% { top: 100vh; opacity: 0; }
+        }
+        
+        /* LAYER 8: Distortion waves */
+        .distortion-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 8;
+            pointer-events: none;
+            background: 
+                repeating-linear-gradient(
+                    90deg,
+                    transparent,
+                    transparent 98px,
+                    rgba(128, 128, 128, 0.02) 100px
+                );
+            animation: distortionWave 12s ease-in-out infinite;
+        }
+        
+        @keyframes distortionWave {
+            0%, 100% { transform: translateX(0) skewX(0deg); }
+            25% { transform: translateX(10px) skewX(1deg); }
+            50% { transform: translateX(-5px) skewX(-0.5deg); }
+            75% { transform: translateX(8px) skewX(0.8deg); }
+        }
+        
+        /* MAIN CONTENT LAYER */
+        .main-container {
+            position: relative;
+            z-index: 10;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        /* Letter container with advanced effects */
+        .letter-container {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            perspective: 1000px;
+            transform-style: preserve-3d;
+        }
+        
+        /* Individual floating letters with INSANE effects */
+        .letter {
+            font-size: clamp(4rem, 12vw, 16rem);
+            font-weight: 700;
+            background: linear-gradient(135deg, 
+                var(--light-gray) 0%, 
+                var(--medium-gray) 15%, 
+                var(--dark-gray) 30%, 
+                var(--almost-black) 45%, 
+                #1a1a1a 60%, 
+                #0f0f0f 75%, 
+                #050505 90%, 
+                #000000 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            text-shadow: 
+                0 0 20px rgba(108, 117, 125, 0.6),
+                0 0 40px rgba(52, 58, 64, 0.4),
+                0 0 80px rgba(32, 32, 32, 0.3),
+                2px 2px 4px rgba(255, 255, 255, 0.1),
+                -2px -2px 4px rgba(0, 0, 0, 0.8);
+            margin: 0.3rem;
+            animation: 
+                floatLetter 6s ease-in-out infinite,
+                letterGlow 4s ease-in-out infinite alternate,
+                letterRotate 20s linear infinite;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: pointer;
+            letter-spacing: 0.05em;
+            position: relative;
+            filter: 
+                drop-shadow(0 8px 16px rgba(0, 0, 0, 0.4))
+                drop-shadow(0 4px 8px rgba(255, 255, 255, 0.1));
+            transform-style: preserve-3d;
+        }
+        
+        .letter:hover {
+            background: linear-gradient(135deg, 
+                #adb5bd 0%, 
+                var(--light-gray) 15%, 
+                var(--medium-gray) 30%, 
+                var(--dark-gray) 45%, 
+                var(--almost-black) 60%, 
+                #1a1a1a 75%, 
+                #0f0f0f 90%, 
+                #000000 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            text-shadow: 
+                0 0 30px rgba(173, 181, 189, 0.8),
+                0 0 60px rgba(108, 117, 125, 0.6),
+                0 0 120px rgba(80, 80, 80, 0.4),
+                4px 4px 8px rgba(255, 255, 255, 0.2),
+                -4px -4px 8px rgba(0, 0, 0, 0.9);
+            transform: 
+                scale(1.1) 
+                rotateX(10deg) 
+                rotateY(5deg) 
+                translateZ(20px);
+            filter: 
+                drop-shadow(0 12px 24px rgba(0, 0, 0, 0.6))
+                drop-shadow(0 6px 12px rgba(255, 255, 255, 0.2));
+        }
+        
+        .letter.space {
+            width: clamp(2rem, 6vw, 8rem);
+            background: none;
+        }
+        
+        /* Multiple shine effects */
+        .letter:before {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: linear-gradient(45deg, 
+                rgba(160, 160, 160, 0.6) 0%, 
+                transparent 25%, 
+                rgba(128, 128, 128, 0.4) 50%, 
+                transparent 75%, 
+                rgba(96, 96, 96, 0.3) 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: metalShine 5s ease-in-out infinite;
+            opacity: 0;
+            z-index: 1;
+        }
+        
+        .letter:after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(
+                from 0deg,
+                transparent 0deg,
+                rgba(128, 128, 128, 0.1) 90deg,
+                transparent 180deg,
+                rgba(96, 96, 96, 0.05) 270deg,
+                transparent 360deg
+            );
+            animation: conicSpin 8s linear infinite;
+            opacity: 0;
+            z-index: -1;
+        }
+        
+        .letter:hover:after {
+            opacity: 1;
+        }
+        
+        @keyframes floatLetter {
+            0%, 100% { 
+                transform: translateY(0px) rotateX(0deg);
+            }
+            25% { 
+                transform: translateY(-20px) rotateX(5deg);
+            }
+            50% { 
+                transform: translateY(-10px) rotateX(-3deg);
+            }
+            75% { 
+                transform: translateY(-25px) rotateX(8deg);
+            }
+        }
+        
+        @keyframes letterGlow {
+            0% { 
+                filter: 
+                    drop-shadow(0 8px 16px rgba(0, 0, 0, 0.4))
+                    drop-shadow(0 4px 8px rgba(255, 255, 255, 0.1));
+            }
+            100% { 
+                filter: 
+                    drop-shadow(0 12px 24px rgba(0, 0, 0, 0.6))
+                    drop-shadow(0 6px 12px rgba(255, 255, 255, 0.2))
+                    drop-shadow(0 0 40px rgba(128, 128, 128, 0.3));
+            }
+        }
+        
+        @keyframes letterRotate {
+            0% { transform: rotateY(0deg); }
+            100% { transform: rotateY(360deg); }
+        }
+        
+        @keyframes metalShine {
+            0%, 100% { 
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+            50% { 
+                opacity: 1;
+                transform: translateX(100%);
+            }
+        }
+        
+        @keyframes conicSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Custom cursor effects */
+        .custom-cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, rgba(128, 128, 128, 0.8) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: difference;
+            transition: transform 0.1s ease;
+        }
+        
+        .cursor-trail {
+            position: fixed;
+            width: 4px;
+            height: 4px;
+            background: rgba(96, 96, 96, 0.6);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9998;
+            animation: trailFade 0.5s ease-out forwards;
+        }
+        
+        @keyframes trailFade {
+            0% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0; transform: scale(0); }
+        }
+        
+        /* Screen shake effect */
+        .screen-shake {
+            animation: screenShake 0.5s ease-in-out;
+        }
+        
+        @keyframes screenShake {
+            0%, 100% { transform: translateX(0) translateY(0); }
+            10% { transform: translateX(-2px) translateY(-1px); }
+            20% { transform: translateX(2px) translateY(1px); }
+            30% { transform: translateX(-1px) translateY(-2px); }
+            40% { transform: translateX(1px) translateY(2px); }
+            50% { transform: translateX(-2px) translateY(1px); }
+            60% { transform: translateX(2px) translateY(-1px); }
+            70% { transform: translateX(-1px) translateY(2px); }
+            80% { transform: translateX(1px) translateY(-2px); }
+            90% { transform: translateX(-2px) translateY(-1px); }
+        }
+        
+        /* Glitch effect */
+        .glitch {
+            animation: glitch 0.3s ease-in-out;
+        }
+        
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+        
+        /* Energy pulse effect */
+        .energy-pulse {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(128, 128, 128, 0.6) 0%, transparent 70%);
+            animation: energyExpand 1s ease-out forwards;
+            pointer-events: none;
+            z-index: 9;
+        }
+        
+        @keyframes energyExpand {
+            0% { 
+                width: 0;
+                height: 0;
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
+            100% { 
+                width: 200px;
+                height: 200px;
+                opacity: 0;
+                transform: translate(-50%, -50%);
+            }
+        }
+        
+        /* Lightning effect */
+        .lightning {
+            position: absolute;
+            width: 2px;
+            height: 100vh;
+            background: linear-gradient(to bottom,
+                transparent 0%,
+                rgba(128, 128, 128, 0.8) 45%,
+                rgba(160, 160, 160, 1) 50%,
+                rgba(128, 128, 128, 0.8) 55%,
+                transparent 100%
+            );
+            animation: lightningFlash 0.2s ease-in-out;
+            z-index: 15;
+            pointer-events: none;
+        }
+        
+        @keyframes lightningFlash {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+        
+        /* Floating UI elements */
+        .floating-ui {
+            position: absolute;
+            z-index: 20;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            color: rgba(128, 128, 128, 0.6);
+            animation: floatingUI 8s ease-in-out infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes floatingUI {
+            0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.6; }
+            25% { transform: translateY(-10px) translateX(5px); opacity: 0.8; }
+            50% { transform: translateY(-5px) translateX(-3px); opacity: 1; }
+            75% { transform: translateY(-15px) translateX(7px); opacity: 0.7; }
+        }
+        
+        /* Breathing atmosphere effect */
+        .atmosphere {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center,
+                transparent 0%,
+                rgba(32, 32, 32, 0.1) 50%,
+                rgba(16, 16, 16, 0.2) 100%
+            );
+            animation: atmosphereBreathe 6s ease-in-out infinite;
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        @keyframes atmosphereBreathe {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+        }
+        
+        /* Responsive design */
+        @media (max-width: 1200px) {
+            .letter {
+                font-size: clamp(3rem, 10vw, 12rem);
+                margin: 0.2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .letter {
+                font-size: clamp(2.5rem, 8vw, 8rem);
+                margin: 0.15rem;
+            }
+            
+            .main-container {
+                padding: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .letter {
+                font-size: clamp(2rem, 6vw, 6rem);
+                margin: 0.1rem;
+            }
+        }
+        
+        /* Performance optimizations */
+        * {
+            will-change: transform, opacity;
+        }
+        
+        .letter {
+            backface-visibility: hidden;
+            transform-origin: center center;
+        }
+        
+        /* Advanced hover states */
+        .letter:hover {
+            animation-play-state: paused;
+        }
+        
+        /* Screen edge glow */
+        .edge-glow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: 25;
+            box-shadow: inset 0 0 100px rgba(64, 64, 64, 0.3);
+            animation: edgeGlowPulse 8s ease-in-out infinite;
+        }
+        
+        @keyframes edgeGlowPulse {
+            0%, 100% { box-shadow: inset 0 0 100px rgba(64, 64, 64, 0.3); }
+            50% { box-shadow: inset 0 0 150px rgba(96, 96, 96, 0.5); }
+        }
+    </style>
 </head>
 <body>
-    <!-- header -->
-    <header class="fade-in">
-        <div class="logo">Torii Barnard</div>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#work-experience">Work Experience</a>
-            <a href="#projects">Projects</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Connect</a>
-        </nav>
-    </header>
-
-    <!-- hero -->
-    <div class="hero">
-        <h1 data-aos="fade-up">Hi, I'm Torii</h1>
-        <p data-aos="fade-up">Creating digital experiences that are impactful, modern, and functional.</p>
-        <a href="#work-experience" class= button data-aos="fade-up">Explore My Work</a>
-        <div class="shooting-stars"></div>
+    <!-- Background Layers -->
+    <div class="bg-layer-1"></div>
+    <div class="bg-layer-2"></div>
+    <div class="bg-layer-3"></div>
+    <div class="atmosphere"></div>
+    
+    <!-- Particle Systems -->
+    <div class="particle-system" id="particleSystem"></div>
+    <div class="geometric-system" id="geometricSystem"></div>
+    
+    <!-- Matrix Rain Effect -->
+    <div class="matrix-rain" id="matrixRain"></div>
+    
+    <!-- Scanning Lines -->
+    <div class="scan-lines" id="scanLines"></div>
+    
+    <!-- Distortion Layer -->
+    <div class="distortion-layer"></div>
+    
+    <!-- Edge Glow -->
+    <div class="edge-glow"></div>
+    
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="customCursor"></div>
+    
+    <!-- Main Content -->
+    <div class="main-container">
+        <div class="letter-container" id="letterContainer">
+            <!-- Letters will be generated by JavaScript -->
+        </div>
+        
+        <!-- Floating UI Elements -->
+        <div class="floating-ui" style="top: 10%; left: 5%;">SYS_STATUS: UPDATING</div>
+        <div class="floating-ui" style="top: 15%; right: 8%;">PROGRESS: ████████░░ 80%</div>
+        <div class="floating-ui" style="bottom: 20%; left: 10%;">MODULES: LOADING...</div>
+        <div class="floating-ui" style="bottom: 15%; right: 12%;">UPTIME: 00:42:17</div>
+        <div class="floating-ui" style="top: 50%; left: 2%;">TEMP: 42°C</div>
+        <div class="floating-ui" style="top: 60%; right: 3%;">MEM: 78%</div>
     </div>
 
-    <!-- about me -->
-    <section id="about">
-        <h2 data-aos="fade-up">About Me</h2>
-        <p data-aos="fade-up">Hi, I’m Torii Barnard, a forward-thinking developer with a knack for transforming complex ideas into elegant, 
-            functional digital experiences. With a background in Computer Science from Dalhousie University, I’ve tackled diverse projects, 
-            embracing every challenge as an opportunity to innovate and grow. When not writing lines of code, I enjoy going to the gym, 
-            playing soccer and practicing electric guitar.
-        </p>
-    </section>
-
-    <!-- work experience -->
-    <section id="work-experience">
-        <h2>Work Experience</h2>
-        <div class="experience">
-            <div class="job" data-aos="fade-up">
-                <h3>Web Development Intern</h3>
-                <p class="job-duration">November 2024 - Present</p>
-                <p class="company">TecBox International LTD, Rhodes Corner, NS</p>
-                <ul>
-                    <li>Designed and developed a website for a small business.</li>
-                    <li>Integrated content to streamline property updates and improve user experience.</li>
-                    <li>Collaborated with clients to gather requirements, implement feedback, and deliver functional solutions.</li>
-                    <li>Balanced technical tasks with client needs to deliver high-quality results.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- projects -->
-    <section id="projects">
-        <h2 data-aos="fade-up">My Projects</h2>
-        <div class="projects">
-            <div class="project" data-aos="zoom-in">
-                <h3>QuickCash - Job Posting App</h3>
-                <p>An Android app connecting job seekers and employers seamlessly.</p>
-                <a href="quickcash.html" class="button" target="_self">View Details</a>
-            </div>
-            <div class="project" data-aos="zoom-in">
-                <h3>Chess Game</h3>
-                <p>A Python-based chess game with an interactive interface using Pygame.</p>
-                <a href="chessgame.html" class="button" target="_self">View Details</a>
-            </div>
-            <div class="project" data-aos="zoom-in">
-                <h3>Portfolio Website</h3>
-                <p>A modern and minimalistic portfolio showcasing my journey in tech.</p>
-                <a href="https://github.com/toriibarnard/E-Portfolio" class="button" target="_blank">View on GitHub</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- skills -->
-    <section id="skills">
-        <h2 data-aos="fade-up">My Skills</h2>
-        <div class="skills-toggle" data-aos="fade-up">
-            <button class="toggle-button" data-category="programming">Programming Languages</button>
-            <button class="toggle-button" data-category="frameworks">Frameworks/Libraries</button>
-            <button class="toggle-button" data-category="developer-tools">Developer Tools</button>
-        </div>
-        <div class="skills-container">
-            <!-- programming Languages -->
-            <div class="skill-category programming" data-aos="fade-in">
-                <h3>Programming Languages</h3>
-                <ul>
-                    <li><i class="fas fa-code"></i> Python</li>
-                    <li><i class="fas fa-code"></i> Java</li>
-                    <li><i class="fas fa-code"></i> JavaScript</li>
-                    <li><i class="fas fa-code"></i> SQL</li>
-                    <li><i class="fas fa-code"></i> C, C++</li>
-                    <li><i class="fas fa-code"></i> HTML & CSS</li>
-                    <li><i class="fas fa-code"></i> PHP</li>
-                </ul>
-            </div>
-    
-            <!-- frameworks/libraries -->
-            <div class="skill-category frameworks" data-aos="fade-in">
-                <h3>Frameworks/Libraries</h3>
-                <ul>
-                    <li><i class="fas fa-laptop-code"></i> React.js</li>
-                    <li><i class="fas fa-laptop-code"></i> Node.js</li>
-                    <li><i class="fas fa-laptop-code"></i> Android SDK</li>
-                    <li><i class="fas fa-laptop-code"></i> JUnit</li>
-                    <li><i class="fas fa-laptop-code"></i> Espresso</li>
-                    <li><i class="fas fa-laptop-code"></i> Bootstrap</li>
-                    <li><i class="fas fa-laptop-code"></i> Pygame</li>
-                </ul>
-            </div>
-    
-            <!-- developer Tools -->
-            <div class="skill-category developer-tools" data-aos="fade-in">
-                <h3>Developer Tools</h3>
-                <ul>
-                    <li><i class="fas fa-tools"></i> Git</li>
-                    <li><i class="fas fa-tools"></i> GitHub</li>
-                    <li><i class="fas fa-tools"></i> JetBrains IDEs</li>
-                    <li><i class="fas fa-tools"></i> VS Code</li>
-                    <li><i class="fas fa-tools"></i> Android Studio</li>
-                    <li><i class="fas fa-tools"></i> MySQL</li>
-                    <li><i class="fas fa-tools"></i> MongoDB</li>
-                    <li><i class="fas fa-tools"></i> Firebase</li>
-                    <li><i class="fas fa-tools"></i> Gradle</li>
-                    <li><i class="fas fa-tools"></i> npm</li>
-                    <li><i class="fas fa-tools"></i> Homebrew</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <!-- contact info-->
-    <section id="contact">
-        <h2 data-aos="fade-up">Connect with Me</h2>
-        <div class="social-links" data-aos="fade-up">
-            <a href="https://www.linkedin.com/in/torii-barnard" target="_blank" class="icon">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://github.com/toriibarnard" target="_blank" class="icon">
-                <i class="fab fa-github"></i>
-            </a>
-        </div>
-    </section>
-
-    <!-- footer -->
-    <footer>
-        <p>&copy; 2025 Torii Barnard. All Rights Reserved.</p>
-    </footer>
-
-    <!-- scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
     <script>
-        AOS.init({
-            duration: 1000,
-            easing: 'ease-in-out',
-        });
+        // Global variables
+        let mouseX = 0, mouseY = 0;
+        let lastMouseX = 0, lastMouseY = 0;
+        let particleCount = 0;
+        let audioContext = null;
+        let isAudioEnabled = false;
+        let frameCount = 0;
+        let letterElements = [];
+        let cursorTrails = [];
+        let screenShakeIntensity = 0;
+        let glitchActive = false;
+        
+        // Initialize audio context
+        function initAudio() {
+            if (!audioContext) {
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                isAudioEnabled = true;
+            }
+        }
+        
+        // Play sound effect
+        function playSound(frequency, duration) {
+            if (!isAudioEnabled || !audioContext) return;
+            
+            const oscillator = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+            
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+            
+            oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
+            oscillator.type = 'sine';
+            
+            gainNode.gain.setValueAtTime(0, audioContext.currentTime);
+            gainNode.gain.linearRampToValueAtTime(0.1, audioContext.currentTime + 0.01);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + duration);
+            
+            oscillator.start(audioContext.currentTime);
+            oscillator.stop(audioContext.currentTime + duration);
+        }
+        
+        // Create individual floating letters with INSANE effects
+        function createLetters() {
+            const text = "SITE UNDER MAINTENANCE";
+            const container = document.getElementById('letterContainer');
+            
+            for (let i = 0; i < text.length; i++) {
+                const letter = document.createElement('div');
+                letter.className = text[i] === ' ' ? 'letter space' : 'letter';
+                letter.textContent = text[i] === ' ' ? '' : text[i];
+                letter.setAttribute('data-text', text[i]);
+                letter.setAttribute('data-index', i);
+                
+                // Add unique animation timing with complex variations
+                const baseDelay = i * 0.1;
+                const randomOffset = Math.random() * 0.5;
+                const complexDuration = 5 + Math.random() * 4;
+                
+                letter.style.animationDelay = `${baseDelay + randomOffset}s`;
+                letter.style.animationDuration = `${complexDuration}s`;
+                
+                // Add individual hover sound effects
+                letter.addEventListener('mouseenter', () => {
+                    playSound(200 + i * 50, 0.2);
+                    createEnergyPulse(letter);
+                });
+                
+                letter.addEventListener('click', () => {
+                    playSound(400 + i * 100, 0.3);
+                    triggerScreenShake();
+                    createLightning();
+                });
+                
+                letterElements.push(letter);
+                container.appendChild(letter);
+            }
+        }
+        
+        // Create massive particle system
+        function createParticleSystem() {
+            const container = document.getElementById('particleSystem');
+            
+            // Create different types of particles
+            setInterval(() => {
+                if (particleCount < 100) {
+                    createParticle('small', container);
+                    particleCount++;
+                }
+            }, 200);
+            
+            setInterval(() => {
+                if (particleCount < 150) {
+                    createParticle('medium', container);
+                    particleCount++;
+                }
+            }, 400);
+            
+            setInterval(() => {
+                if (particleCount < 200) {
+                    createParticle('large', container);
+                    particleCount++;
+                }
+            }, 600);
+        }
+        
+        function createParticle(size, container) {
+            const particle = document.createElement('div');
+            particle.className = `particle particle-${size}`;
+            
+            // Random starting position
+            particle.style.left = Math.random() * window.innerWidth + 'px';
+            particle.style.top = window.innerHeight + 'px';
+            
+            // Random animation duration with size variations
+            const baseDuration = size === 'small' ? 8 : size === 'medium' ? 12 : 6;
+            particle.style.animationDuration = (baseDuration + Math.random() * 3) + 's';
+            
+            // Random horizontal drift
+            particle.style.setProperty('--drift', (Math.random() - 0.5) * 100 + 'px');
+            
+            container.appendChild(particle);
+            
+            // Remove particle after animation
+            setTimeout(() => {
+                if (container.contains(particle)) {
+                    container.removeChild(particle);
+                    particleCount--;
+                }
+            }, (baseDuration + 3) * 1000);
+        }
+        
+        // Create floating geometric shapes
+        function createGeometricSystem() {
+            const container = document.getElementById('geometricSystem');
+            const shapes = ['triangle', 'square', 'diamond'];
+            
+            setInterval(() => {
+                const shape = document.createElement('div');
+                const shapeType = shapes[Math.floor(Math.random() * shapes.length)];
+                shape.className = `geometric-shape shape-${shapeType}`;
+                
+                // Random position
+                shape.style.left = Math.random() * window.innerWidth + 'px';
+                shape.style.top = Math.random() * window.innerHeight + 'px';
+                
+                // Random size variation
+                const scale = 0.5 + Math.random() * 1.5;
+                shape.style.transform = `scale(${scale})`;
+                
+                // Random animation duration
+                shape.style.animationDuration = (10 + Math.random() * 10) + 's';
+                
+                container.appendChild(shape);
+                
+                // Remove after animation
+                setTimeout(() => {
+                    if (container.contains(shape)) {
+                        container.removeChild(shape);
+                    }
+                }, 20000);
+            }, 3000);
+        }
+        
+        // Create Matrix rain effect
+        function createMatrixRain() {
+            const container = document.getElementById('matrixRain');
+            const characters = '01ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+-=[]{}|;:,.<>?';
+            
+            setInterval(() => {
+                const column = document.createElement('div');
+                column.className = 'matrix-column';
+                
+                // Generate random text
+                let text = '';
+                for (let i = 0; i < 20; i++) {
+                    text += characters.charAt(Math.floor(Math.random() * characters.length)) + '\n';
+                }
+                column.textContent = text;
+                
+                // Random position
+                column.style.left = Math.random() * window.innerWidth + 'px';
+                column.style.animationDuration = (6 + Math.random() * 4) + 's';
+                
+                container.appendChild(column);
+                
+                // Remove after animation
+                setTimeout(() => {
+                    if (container.contains(column)) {
+                        container.removeChild(column);
+                    }
+                }, 10000);
+            }, 1000);
+        }
+        
+        // Create scanning lines
+        function createScanLines() {
+            const container = document.getElementById('scanLines');
+            
+            setInterval(() => {
+                const scanLine = document.createElement('div');
+                scanLine.className = 'scan-line';
+                
+                // Random width and opacity
+                scanLine.style.width = (80 + Math.random() * 20) + '%';
+                scanLine.style.left = Math.random() * 20 + '%';
+                scanLine.style.animationDuration = (4 + Math.random() * 4) + 's';
+                
+                container.appendChild(scanLine);
+                
+                // Remove after animation
+                setTimeout(() => {
+                    if (container.contains(scanLine)) {
+                        container.removeChild(scanLine);
+                    }
+                }, 8000);
+            }, 2000);
+        }
+        
+        // Custom cursor system
+        function setupCustomCursor() {
+            const cursor = document.getElementById('customCursor');
+            
+            document.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+                
+                cursor.style.left = mouseX - 10 + 'px';
+                cursor.style.top = mouseY - 10 + 'px';
+                
+                // Create cursor trail
+                if (frameCount % 3 === 0) {
+                    createCursorTrail(mouseX, mouseY);
+                }
+                
+                // Advanced mouse interaction with letters
+                updateLetterInteractions(mouseX, mouseY);
+            });
+        }
+        
+        function createCursorTrail(x, y) {
+            const trail = document.createElement('div');
+            trail.className = 'cursor-trail';
+            trail.style.left = x - 2 + 'px';
+            trail.style.top = y - 2 + 'px';
+            
+            document.body.appendChild(trail);
+            
+            setTimeout(() => {
+                if (document.body.contains(trail)) {
+                    document.body.removeChild(trail);
+                }
+            }, 500);
+        }
+        
+        // Advanced letter interactions
+        function updateLetterInteractions(mouseX, mouseY) {
+            letterElements.forEach((letter, index) => {
+                if (!letter.getBoundingClientRect) return;
+                
+                const rect = letter.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+                
+                const distance = Math.sqrt(
+                    Math.pow(mouseX - centerX, 2) + 
+                    Math.pow(mouseY - centerY, 2)
+                );
+                
+                if (distance < 150) {
+                    const intensity = (150 - distance) / 150;
+                    
+                    // Complex 3D transformations
+                    const rotateX = (mouseY - centerY) / 10;
+                    const rotateY = (mouseX - centerX) / 10;
+                    const translateZ = intensity * 30;
+                    const scale = 1 + intensity * 0.2;
+                    
+                    letter.style.transform = `
+                        translateY(-${intensity * 15}px) 
+                        rotateX(${rotateX}deg) 
+                        rotateY(${rotateY}deg) 
+                        translateZ(${translateZ}px) 
+                        scale(${scale})
+                    `;
+                    
+                    // Enhanced lighting effects
+                    letter.style.textShadow = `
+                        0 0 ${30 + intensity * 40}px rgba(173, 181, 189, ${0.4 + intensity * 0.6}),
+                        0 0 ${60 + intensity * 80}px rgba(128, 128, 128, ${0.2 + intensity * 0.5}),
+                        0 0 ${120 + intensity * 100}px rgba(96, 96, 96, ${0.1 + intensity * 0.3}),
+                        ${4 + intensity * 6}px ${4 + intensity * 6}px ${8 + intensity * 12}px rgba(255, 255, 255, ${0.1 + intensity * 0.2}),
+                        ${-4 - intensity * 6}px ${-4 - intensity * 6}px ${8 + intensity * 12}px rgba(0, 0, 0, ${0.8 + intensity * 0.2})
+                    `;
+                    
+                    letter.style.filter = `
+                        drop-shadow(0 ${8 + intensity * 16}px ${16 + intensity * 24}px rgba(0, 0, 0, ${0.4 + intensity * 0.4}))
+                        drop-shadow(0 ${4 + intensity * 8}px ${8 + intensity * 16}px rgba(255, 255, 255, ${0.1 + intensity * 0.2}))
+                        drop-shadow(0 0 ${20 + intensity * 40}px rgba(128, 128, 128, ${intensity * 0.5}))
+                    `;
+                    
+                    // Sound feedback
+                    if (Math.random() < 0.02) {
+                        playSound(150 + intensity * 200, 0.1);
+                    }
+                } else {
+                    // Reset transformations
+                    letter.style.transform = '';
+                    letter.style.textShadow = '';
+                    letter.style.filter = '';
+                }
+            });
+        }
+        
+        // Create energy pulse effect
+        function createEnergyPulse(element) {
+            const rect = element.getBoundingClientRect();
+            const pulse = document.createElement('div');
+            pulse.className = 'energy-pulse';
+            pulse.style.left = rect.left + rect.width / 2 + 'px';
+            pulse.style.top = rect.top + rect.height / 2 + 'px';
+            
+            document.body.appendChild(pulse);
+            
+            setTimeout(() => {
+                if (document.body.contains(pulse)) {
+                    document.body.removeChild(pulse);
+                }
+            }, 1000);
+        }
+        
+        // Screen shake effect
+        function triggerScreenShake() {
+            document.body.classList.add('screen-shake');
+            setTimeout(() => {
+                document.body.classList.remove('screen-shake');
+            }, 500);
+        }
+        
+        // Glitch effect
+        function triggerGlitch() {
+            if (glitchActive) return;
+            glitchActive = true;
+            
+            const randomLetter = letterElements[Math.floor(Math.random() * letterElements.length)];
+            if (randomLetter) {
+                randomLetter.classList.add('glitch');
+                setTimeout(() => {
+                    randomLetter.classList.remove('glitch');
+                    glitchActive = false;
+                }, 300);
+            }
+        }
+        
+        // Lightning effect
+        function createLightning() {
+            const lightning = document.createElement('div');
+            lightning.className = 'lightning';
+            lightning.style.left = Math.random() * window.innerWidth + 'px';
+            
+            document.body.appendChild(lightning);
+            
+            setTimeout(() => {
+                if (document.body.contains(lightning)) {
+                    document.body.removeChild(lightning);
+                }
+            }, 200);
+        }
+        
+        // Keyboard interactions
+        function setupKeyboardEffects() {
+            document.addEventListener('keydown', (e) => {
+                initAudio();
+                
+                switch(e.code) {
+                    case 'Space':
+                        // Particle explosion
+                        for (let i = 0; i < 30; i++) {
+                            setTimeout(() => {
+                                createParticle('small', document.getElementById('particleSystem'));
+                            }, i * 20);
+                        }
+                        playSound(300, 0.5);
+                        break;
+                        
+                    case 'KeyG':
+                        triggerGlitch();
+                        playSound(150, 0.3);
+                        break;
+                        
+                    case 'KeyL':
+                        createLightning();
+                        playSound(800, 0.2);
+                        break;
+                        
+                    case 'KeyS':
+                        triggerScreenShake();
+                        playSound(100, 0.4);
+                        break;
+                        
+                    case 'Enter':
+                        // Massive effect combo
+                        triggerScreenShake();
+                        createLightning();
+                        setTimeout(() => triggerGlitch(), 200);
+                        playSound(400, 0.6);
+                        break;
+                }
+            });
+        }
+        
+        // Advanced breathing and atmosphere effects
+        function setupAtmosphereSystem() {
+            let breathPhase = 0;
+            let atmospherePhase = 0;
+            
+            setInterval(() => {
+                frameCount++;
+                breathPhase += 0.008;
+                atmospherePhase += 0.005;
+                
+                // Background breathing
+                const bgOpacity = 0.25 + (Math.sin(breathPhase) * 0.1);
+                const bg2Element = document.querySelector('.bg-layer-2');
+                if (bg2Element) {
+                    bg2Element.style.opacity = bgOpacity;
+                }
+                
+                // Nebula pulsing
+                const nebulaOpacity = 0.12 + (Math.cos(breathPhase * 0.7) * 0.05);
+                const nebulaElement = document.querySelector('.bg-layer-3');
+                if (nebulaElement) {
+                    nebulaElement.style.opacity = nebulaOpacity;
+                }
+                
+                // Atmosphere effects
+                const atmosphere = document.querySelector('.atmosphere');
+                if (atmosphere) {
+                    const scale = 1 + (Math.sin(atmospherePhase) * 0.02);
+                    const opacity = 0.5 + (Math.cos(atmospherePhase * 1.3) * 0.1);
+                    atmosphere.style.transform = `scale(${scale})`;
+                    atmosphere.style.opacity = opacity;
+                }
+                
+                // Random glitch effects
+                if (frameCount % 300 === 0 && Math.random() < 0.3) {
+                    triggerGlitch();
+                }
+                
+                // Random lightning
+                if (frameCount % 500 === 0 && Math.random() < 0.1) {
+                    createLightning();
+                }
+            }, 100);
+        }
+        
+        // Performance monitoring
+        function setupPerformanceMonitoring() {
+            let fps = 0;
+            let lastTime = performance.now();
+            let frameCount = 0;
+            
+            function calculateFPS() {
+                frameCount++;
+                const currentTime = performance.now();
+                const deltaTime = currentTime - lastTime;
+                
+                if (deltaTime >= 1000) {
+                    fps = Math.round((frameCount * 1000) / deltaTime);
+                    frameCount = 0;
+                    lastTime = currentTime;
+                    
+                    // Adjust effects based on performance
+                    if (fps < 30) {
+                        // Reduce particle count for better performance
+                        particleCount = Math.max(0, particleCount - 10);
+                    }
+                }
+                
+                requestAnimationFrame(calculateFPS);
+            }
+            
+            calculateFPS();
+        }
+        
+        // Window resize handler
+        function setupResponsiveHandler() {
+            window.addEventListener('resize', () => {
+                // Trigger screen shake on resize
+                triggerScreenShake();
+                
+                // Update particle positions
+                setTimeout(() => {
+                    // Clear some particles to prevent overflow
+                    const particles = document.querySelectorAll('.particle');
+                    particles.forEach((particle, index) => {
+                        if (index % 3 === 0) {
+                            particle.remove();
+                            particleCount--;
+                        }
+                    });
+                }, 500);
+            });
+        }
+        
+        // Easter eggs and hidden features
+        function setupEasterEggs() {
+            let clickCount = 0;
+            let lastClickTime = 0;
+            
+            document.addEventListener('click', (e) => {
+                const currentTime = Date.now();
+                
+                if (currentTime - lastClickTime < 300) {
+                    clickCount++;
+                } else {
+                    clickCount = 1;
+                }
+                
+                lastClickTime = currentTime;
+                
+                // Triple click easter egg
+                if (clickCount >= 3) {
+                    // Massive effect explosion
+                    for (let i = 0; i < 50; i++) {
+                        setTimeout(() => {
+                            createParticle('large', document.getElementById('particleSystem'));
+                        }, i * 50);
+                    }
+                    
+                    // Multiple lightning strikes
+                    for (let i = 0; i < 5; i++) {
+                        setTimeout(() => {
+                            createLightning();
+                        }, i * 100);
+                    }
+                    
+                    triggerScreenShake();
+                    playSound(500, 1);
+                    clickCount = 0;
+                }
+            });
+            
+            // Konami code easter egg
+            let konamiSequence = [];
+            const konamiCode = [
+                'ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown',
+                'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight',
+                'KeyB', 'KeyA'
+            ];
+            
+            document.addEventListener('keydown', (e) => {
+                konamiSequence.push(e.code);
+                
+                if (konamiSequence.length > konamiCode.length) {
+                    konamiSequence.shift();
+                }
+                
+                if (konamiSequence.length === konamiCode.length &&
+                    konamiSequence.every((key, index) => key === konamiCode[index])) {
+                    
+                    // Activate super mode
+                    document.body.style.filter = 'hue-rotate(180deg) saturate(2)';
+                    
+                    // Create chaos
+                    for (let i = 0; i < 100; i++) {
+                        setTimeout(() => {
+                            createParticle('large', document.getElementById('particleSystem'));
+                            if (i % 10 === 0) createLightning();
+                            if (i % 5 === 0) triggerGlitch();
+                        }, i * 100);
+                    }
+                    
+                    setTimeout(() => {
+                        document.body.style.filter = '';
+                    }, 10000);
+                    
+                    konamiSequence = [];
+                }
+            });
+        }
+        
+        // Initialize everything
+        function initialize() {
+            createLetters();
+            setupCustomCursor();
+            createParticleSystem();
+            createGeometricSystem();
+            createMatrixRain();
+            createScanLines();
+            setupKeyboardEffects();
+            setupAtmosphereSystem();
+            setupPerformanceMonitoring();
+            setupResponsiveHandler();
+            setupEasterEggs();
+            
+            // Enable audio on first user interaction
+            document.addEventListener('click', initAudio, { once: true });
+            document.addEventListener('keydown', initAudio, { once: true });
+            
+            console.log('🚀 INSANE MAINTENANCE PAGE LOADED');
+            console.log('💡 Try: SPACE, G, L, S, ENTER keys');
+            console.log('🎮 Triple-click for explosion');
+            console.log('🕹️ Konami code for chaos mode');
+        }
+        
+        // Start the madness
+        initialize();
     </script>
-    <script src="js/script.js" defer></script>
-    <script src="js/shootingstars.js" defer></script>
 </body>
 </html>
